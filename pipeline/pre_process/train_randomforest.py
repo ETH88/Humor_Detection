@@ -40,7 +40,7 @@ class Train_RandomForest(PreProcess):
         strid = uuid.uuid1()
         with open(f"randomforest/data/alldata_{strid}.txt", 'w') as data_file: #saving data to txt file in /data folder
             for i in range(len(X)):
-                data_file.write(f'{y[i]},{X[i]}\n')
+                data_file.write(f'{i},{y[i]},a,{X[i]}\n')
 
         from sklearn.model_selection import train_test_split
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -48,7 +48,7 @@ class Train_RandomForest(PreProcess):
         
         with open(f'randomforest/data/testingdata_{strid}.txt', 'w') as data_file:
             for i in range(len(X_test)):
-                data_file.write(f'{y_test[i]},{X_test[i]}\n')
+                data_file.write(f'{i},{y_test[i]},a,{X_test[i]}\n')
 
         from sklearn.feature_extraction.text import TfidfVectorizer
         tfidfconverter = TfidfVectorizer(max_features=1500, min_df=5, max_df=0.7)

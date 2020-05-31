@@ -31,10 +31,10 @@ class Fasttext(Rule):
         y_test = []
         if s._interactive == False:
             with open(f'fast_text/data/testingdata_{master_dict[modelid].replace(".bin",".txt")}', 'r') as data_file:
-                for index, line in enumerate(data_file):
-                    entiredata = line[:-1]
-                    y_test.append(int(entiredata[0]))
-                    X_test.append(entiredata[2:])
+                for line in data_file:
+                    entiredata = line[:-1].split(",")
+                    y_test.append(int(entiredata[1]))
+                    X_test.append(entiredata[3])
         else: #interactive mode
             y_test.append(int(s._data[0][0]))
             X_test.append(s._data[0][1]) #s._rawdata

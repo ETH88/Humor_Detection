@@ -21,7 +21,7 @@ from pipeline.post_process.visualize import Visualize
 
 if __name__ == '__main__': 
     config = {
-        'datafile': 'traintest.txt', #IMPORTANT: if you want to use random forest or fasttext with naive rules, MUST USE 'testingdata_21c26804-96c8-11ea-9d84-acde48001122_copy.txt'
+        'datafile': 'traintest.txt', #'traintest.txt', IMPORTANT: if you want to use random forest or fasttext with naive rules, MUST USE 'testingdata_21c26804-96c8-11ea-9d84-acde48001122_copy.txt'
         'interactive_mode': False, 
         'preprocess': [
             {
@@ -51,7 +51,7 @@ if __name__ == '__main__':
             },
             { 
                 'name': 'train_fasttext',
-                'enabled': False,
+                'enabled': True,
                 'obj': Train_Fasttext(),
                 'metadata': {
                     'test_size': 0.2,
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         ],
         'rules': {
             'r1': {
-                'enabled': True,
+                'enabled': False,
                 'dependencies': [],
                 'obj': Contain_Funny(),
                 'weight': 0.333,
@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 'weight': 0
             },
             'r5': {
-                'enabled': False,
+                'enabled': True,
                 'dependencies': [],
                 'obj': RandomForest(),
                 'weight': 0.333,
@@ -104,12 +104,12 @@ if __name__ == '__main__':
                 }
             },
             'r6': {
-                'enabled': False,
+                'enabled': True,
                 'dependencies': [],
                 'obj': Fasttext(),
                 'weight': 0.333,
                 'metadata': {
-                    'modelID': '1'
+                    #'modelID': '1'
                 }
             }
         },
@@ -120,16 +120,16 @@ if __name__ == '__main__':
                 'metadata': {
                     'metrics': ['accuracy','precision', 'recall', 'f1', 'cm'], #IMPORTANT: in interactive mode, set to []
                     'return_pred': False,
-                    'average': False,
-                    'save': True, 
+                    'average': True,
+                    'save': False, 
                 }
             }, 
             'visualize': {
-                'enabled': True,
+                'enabled': False,
                 'obj': Visualize(),
                 'metadata': {
                     'normalize': False,
-                    'save': True 
+                    'save': False 
                 }
             }
 

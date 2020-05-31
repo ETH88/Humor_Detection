@@ -40,7 +40,7 @@ class Train_Fasttext(PreProcess):
         strid = uuid.uuid1()
         with open(f"fast_text/data/alldata_{strid}.txt", 'w') as data_file: #saving data to txt file in /data folder
             for i in range(len(X)):
-                data_file.write(f'{y[i]},{X[i]}\n')
+                data_file.write(f'{i},{y[i]},a,{X[i]}\n')
 
         test_size = self._metadata['test_size']
         from sklearn.model_selection import train_test_split
@@ -48,7 +48,7 @@ class Train_Fasttext(PreProcess):
 
         with open(f'fast_text/data/testingdata_{strid}.txt', 'w') as data_file:
             for i in range(len(X_test)):
-                data_file.write(f'{y_test[i]},{X_test[i]}\n')
+                data_file.write(f'{i},{y_test[i]},a,{X_test[i]}\n')
 
         lr = self._metadata['lr']
         epoch = self._metadata['epoch']

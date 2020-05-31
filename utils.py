@@ -78,8 +78,7 @@ class Pipeline:
             with open(f"{os.getcwd()}/data/{config['datafile']}", 'r') as data_file:
                 for line in data_file:
                     temp = line[:-1].split(",")
-                    self._data.append([temp[0], temp[1]]) #IMPORTANT: use w testingdata_21c26804-96c8-11ea-9d84-acde48001122_copy.txt 
-                    #IMPORTANT: if using 'traintest.txt', you must change line 81 to "self._data.append([temp[1], temp[3]])"           
+                    self._data.append([temp[1], temp[3]]) 
             ###Preprocessing###
             self._data = Essential_PreProcess().apply(self._data)
             self._rawdata = [row[:] for row in self._data]

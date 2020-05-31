@@ -34,8 +34,8 @@ class RandomForest(Rule):
             with open(f'randomforest/data/testingdata_{master_dict[modelid].replace(".pkl", ".txt")}', 'r') as data_file:
                 for line in data_file:
                     currentPlace = line[:-1].split(",")
-                    y_test.append(currentPlace[0])
-                    X_test.append(currentPlace[1])
+                    y_test.append(currentPlace[1])
+                    X_test.append(currentPlace[3])
         else: #interactive mode
             y_test.append(s._data[0][0])
             X_test.append(s._data[0][1])
