@@ -35,6 +35,7 @@ source venv/bin/activate
 git clone https://github.com/facebookresearch/fastText.git
 cd fastText
 sudo pip3 install .
+cd ..
 ```
 6. Now the code is ready to be run! Type the following command into VSCode or your terminal, and watch the model go to work!
 ```
