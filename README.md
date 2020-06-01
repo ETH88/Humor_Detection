@@ -64,7 +64,7 @@ where python3
 pip3 install nltk pandas matplotlib sklearn
 ```
 
-8. Install fasttext. Follow the commands for installing fasttext (they can also be found on Fasttext's website: https://fasttext.cc/docs/en/support.html).
+8. Install fasttext. Follow the commands for installing fasttext (they can also be found on Fasttext's website: https://fasttext.cc/docs/en/support.html). The third line has the command "sudo," so after you type the third command into the terminal, you will have to enter the password you use to login to your computer.
 ```
 git clone https://github.com/facebookresearch/fastText.git
 cd fastText
