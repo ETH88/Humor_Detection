@@ -80,4 +80,9 @@ python3 main.py
 # Playing Around with the Code
 
 If you want to play around with the hyperparameters, enable/disable preprocessing stages/rules/postprocessing stages, or even create your own or test out different datasets and combination of rules, I highly recommend downloading the text editor VSCode - you can install it here: https://code.visualstudio.com/download.
-The main code I recommend playing around with is "main.py," which contains the "config" dictionary, where all the properties and metadata are specified.
+
+The main code I recommend playing around with is "main.py," which contains the "config" dictionary, where all the properties and metadata are specified. After training a fasttext model, I recommend playing around with interactive mode. To do this, set "interactive mode" to "True", and under "postprocess" and "report," I recommend you  set "metrics" to "[]" and "return_pred" to "True." 
+
+You can also play around with the weights (how much each rule is taken into consideration) by changing what "weight" is equal to for each enabled rule. If you want multiple rules to work together, make sure to set "average" to "True" (under 'postprocess' and 'report') and use 'testingdata_copy.txt' for your datafile instead of 'traintest.txt'. If you want to save the results or the confusion matrices, set "save" to True in "postprocessing". In addition, feel free to disable/enable any pre-processing stage/rule/post-processing stage you want to see what effect they have on the model's performance.
+
+Feel free to ask me if you are unable to run my code or if you come across any issues. My email is ethanbmode@gmail.com.
