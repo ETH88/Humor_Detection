@@ -87,4 +87,6 @@ After training a fasttext model by running "python3 main.py", I recommend playin
 
 You can also play around with the weights (how much each rule is taken into consideration) by changing what "weight" is equal to for each enabled rule. If you want multiple rules to work together outside of interactive mode, make sure to set "average" to "True" (under 'postprocess' and 'report') and use 'testingdata_copy.txt' for your datafile instead of 'traintest.txt'. If you want to save the results or the confusion matrices, set "save" to True in "postprocessing". In addition, feel free to disable/enable any pre-processing stage/rule/post-processing stage you want to see what effect they have on the model's performance.
 
+A pre-trained fasttext and Random Forest model can be found here: https://drive.google.com/file/d/1EYqn7aO83q8PJ84lPrZJMu0yAb-V8E_M/view?usp=sharing. Feel free to download and use them!
+
 Feel free to ask me if you are unable to run my code or if you come across any issues. My email is ethanbmode@gmail.com. Have fun!
