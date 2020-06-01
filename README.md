@@ -31,13 +31,13 @@ cd Downloads/Humor_Detection-master
 ```
 which python3
 ```
-If something like "/usr/bin/python3" is returned, python3 has been installed and you can skip this step. If not, download the latest version of python3 at python's official website: https://www.python.org/downloads/.
+   If something like "/usr/bin/python3" is returned, python3 has been installed and you can skip this step. If not, download the latest version of python3 at python's official website: https://www.python.org/downloads/.
 
 5. Create a virtual environment, which will be a separate place where all the dependencies can be installed. On macOS and Linux, type the following command:
 ```
 python3 -m venv venv
 ```
-On Windows, type the following command instead:
+   On Windows, type the following command instead:
 ```
 py -m venv venv
 ```
@@ -46,7 +46,7 @@ py -m venv venv
 ```
 source venv/bin/activate
 ```
-On Windows, type the following command instead: 
+   On Windows, type the following command instead: 
 ```
 .\venv\Scripts\activate
 ```
@@ -54,7 +54,7 @@ You should see "(venv)" pop up on the left side of the terminal. To confirm the 
 ```
 which python3
 ```
-On Windows:
+   On Windows:
 ```
 where python3
 ```
