@@ -5,7 +5,7 @@ Humor Detection Model - Senior Research Project at Clarabridge
 Welcome to my Humor Detection GitHub! All the code you need to run a humor detection model is above. Follow a few simple instructions below, and you can run it and play around with it on your own computer!
 
 
-# Pipeline Architecture
+# Pipeline Architecture/Senior Project Presentation
 
 [Link to pipeline architecture](https://docs.google.com/presentation/d/1ovGGWBDW6Nw_IOQBciTxk3PVscZcIRLUf1f7ZEpDcZk/edit?usp=sharing)
 
