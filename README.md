@@ -37,7 +37,7 @@ which python3
 ```
 python3 -m venv venv
 ```
-   On Windows, type the following command instead:
+  On Windows, type the following command instead:
 ```
 py -m venv venv
 ```
