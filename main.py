@@ -31,7 +31,7 @@ if __name__ == '__main__':
             },
             {
                 'name': 'normalize',
-                'enabled': False,
+                'enabled': False, #Do not enable, not yet implemented
                 'obj': Normalize()  #TODO: implement
             },
             {
@@ -46,7 +46,7 @@ if __name__ == '__main__':
             },
             {
                 'name': 'train_randomforest',
-                'enabled': False,
+                'enabled': False, #IMPORTANT: training takes hours
                 'obj': Train_RandomForest()
             },
             { 
@@ -77,7 +77,7 @@ if __name__ == '__main__':
                 }
             },
             'r2': {
-                'enabled': False,
+                'enabled': False, 
                 'dependencies': [],
                 'obj': Contain_NotFunny(),
                 'weight': 0
@@ -109,7 +109,7 @@ if __name__ == '__main__':
                 'obj': Fasttext(),
                 'weight': 0.333,
                 'metadata': {
-                    #'modelID': '1'
+                    #'modelID': '1' #IMPORTANT: This tells the model which fasttext model you want to test on (default is one just trained as a preprocessing stage). If you want to use a fasttext model you already trained, you can set modelID to the modelID of the model you want to use and thus don't have to retrain a fasttext model.
                 }
             }
         },
@@ -118,8 +118,8 @@ if __name__ == '__main__':
                 'enabled': True,
                 'obj': Report(),
                 'metadata': {
-                    'metrics': ['accuracy','precision', 'recall', 'f1', 'cm'], #IMPORTANT: in interactive mode, set to []
-                    'return_pred': False,
+                    'metrics': ['accuracy','precision', 'recall', 'f1', 'cm'], #IMPORTANT: in interactive mode, recommend setting to []
+                    'return_pred': False, #IMPORTANT: in interactive mode, set to True
                     'average': False,
                     'save': False, 
                 }
