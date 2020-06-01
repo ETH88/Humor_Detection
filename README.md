@@ -16,9 +16,9 @@ Welcome to my Humor Detection GitHub! All the code you need to run a humor detec
 
 # Running the Code
 
-Running the code above and testing my humor detection model is pretty simple. 
+Follow the steps below to run the code above and test my humor detection model!
  
-1. Click the "Clone or Download" green button on the top right. This will download the GitHub repository.
+1. Click the "Clone or Download" green button on the top right, then click "Download ZIP." This will download the GitHub repository.
 2. Open "main.py" in your preferred text editor. I highly recommend VSCode - you can install it here: https://code.visualstudio.com/download.
 3. Type the code below into your terminal or VSCode. This will navigate you to the "Humor" directory, whether in your terminal or VSCode, using ls and cd commands.
 ```
