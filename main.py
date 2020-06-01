@@ -21,7 +21,7 @@ from pipeline.post_process.visualize import Visualize
 
 if __name__ == '__main__': 
     config = {
-        'datafile': 'traintest.txt', #'traintest.txt', IMPORTANT: if you want to use random forest or fasttext with naive rules, MUST USE 'testingdata_21c26804-96c8-11ea-9d84-acde48001122_copy.txt'
+        'datafile': 'traintest.txt', #'traintest.txt', IMPORTANT: if you want to use random forest or fasttext with naive rules, MUST USE 'testingdata_copy.txt'
         'interactive_mode': False, 
         'preprocess': [
             {
