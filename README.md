@@ -24,7 +24,7 @@ Follow the steps below to run the code above and test my humor detection model!
 ```
 cd Downloads
 ls
-cd Humor
+cd Humor_Detection-master
 ```
 4. Enter the virtual environment, which has many of the dependencies already installed, including Python and libraries like nltk, pandas, matplotlib, sklearn, numpy, etc., using the following code. You should see (venv) pop up on the left side if this is done correctly.
 ```
