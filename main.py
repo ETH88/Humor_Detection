@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 'weight': 0
             },
             'r5': {
-                'enabled': True,
+                'enabled': False,
                 'dependencies': [],
                 'obj': RandomForest(),
                 'weight': 0.333,
@@ -120,7 +120,7 @@ if __name__ == '__main__':
                 'metadata': {
                     'metrics': ['accuracy','precision', 'recall', 'f1', 'cm'], #IMPORTANT: in interactive mode, set to []
                     'return_pred': False,
-                    'average': True,
+                    'average': False,
                     'save': False, 
                 }
             }, 

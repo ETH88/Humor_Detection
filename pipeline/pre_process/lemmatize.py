@@ -25,9 +25,9 @@ class Lemmatize(PreProcess):
         return tag_dict.get(tag, wordnet.NOUN)
 
     def apply(self, data: list):
-        #nltk.download('averaged_perceptron_tagger')
-        #nltk.download('punkt')
-        #nltk.download('wordnet')
+        nltk.download('averaged_perceptron_tagger')
+        nltk.download('punkt')
+        nltk.download('wordnet')
         from nltk.stem import WordNetLemmatizer 
 
         # 1. Init Lemmatizer
