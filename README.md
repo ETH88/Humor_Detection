@@ -19,31 +19,44 @@ Welcome to my Humor Detection GitHub! All the code you need to run a humor detec
 Follow the steps below to run the code above and test my humor detection model!
  
 1. Click the "Clone or Download" green button on the top right, then click "Download ZIP." This will download the GitHub repository.
+
 2. Open the terminal (for Mac: Applications --> Utilities --> Terminal)
+
 3. Type the code below into your terminal. If my code has successfully finished downloading into your Downloads folder, this will navigate you to the correct directory.
 ```
 cd Downloads/Humor_Detection-master
 ```
-4. Create a virtual environment, which will be a separate place where all the dependencies can be installed:
+
+4. Check if you have python3 installed on your computer. Type the command:
+```
+which python3
+```
+If something like "/usr/bin/python3" is returned, python3 has been installed and you can skip this step. If not, download the latest version of python3 at python's official website: https://www.python.org/downloads/.
+
+5. Create a virtual environment, which will be a separate place where all the dependencies can be installed:
 ```
 python3 -m venv venv
 ```
-5. Enter the virtual environment you just created. After typing the following command, you should see "(venv)" pop up on the left side of the terminal.
+
+6. Enter the virtual environment you just created. After typing the following command, you should see "(venv)" pop up on the left side of the terminal.
 ```
 source venv/bin/activate
 ```
-6. Install the dependencies for this project by typing the following command into the terminal. This should take around five minutes.
+
+7. Install the dependencies for this project by typing the following command into the terminal. This should take around five minutes.
 ```
 pip3 install nltk pandas matplotlib sklearn
 ```
-7. Install fasttext. Follow the commands for installing fasttext (they can also be found on Fasttext's website: https://fasttext.cc/docs/en/support.html):
+
+8. Install fasttext. Follow the commands for installing fasttext (they can also be found on Fasttext's website: https://fasttext.cc/docs/en/support.html):
 ```
 git clone https://github.com/facebookresearch/fastText.git
 cd fastText
 sudo pip3 install .
 cd ..
 ```
-6. Now the code is ready to be run! Type the following command into your terminal, and watch the model go to work!
+
+9. Now the code is ready to be run! Type the following command into your terminal, and watch the Fasttext model go to work!
 ```
 python3 main.py
 ```
