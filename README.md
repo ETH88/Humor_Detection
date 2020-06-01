@@ -50,15 +50,13 @@ On Windows, type the following command instead:
 ```
 .\venv\Scripts\activate
 ```
-You should see "(venv)" pop up on the left side of the terminal. To confirm the virtual environment works, on macOS and Linus type the following command:
+You should see "(venv)" pop up on the left side of the terminal. To confirm the virtual environment works, on macOS and Linus type the following command, and the path returned should look like ".../venv/bin/python3", NOT "usr/bin/python3":
 ```
-which python
-.../venv/bin/python should be returned
+which python3
 ```
 On Windows:
 ```
-where python
-.../venv/bin/python.exe should be returned
+where python3
 ```
 
 7. Install the dependencies for this project by typing the following command into the terminal. This should take around five minutes. If the pop-up window "The 'gcc' command requires the command line developer tools" appears when you run the following command, click "Install."
@@ -81,4 +79,5 @@ python3 main.py
 
 # Playing Around with the Code
 
-Open "main.py" in your preferred text editor. I highly recommend VSCode - you can install it here: https://code.visualstudio.com/download.
+If you want to play around with the hyperparameters, enable/disable preprocessing stages/rules/postprocessing stages, or even create your own or test out different datasets and combination of rules, I highly recommend downloading the text editor VSCode - you can install it here: https://code.visualstudio.com/download.
+The main code I recommend playing around with is "main.py," which contains the "config" dictionary, where all the properties and metadata are specified.
