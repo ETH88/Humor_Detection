@@ -54,7 +54,6 @@ class Visualize(PostProcess):
         import time
         ts = time.gmtime()
 
-        self._normalize = True
         if self._normalize:
             # Plot normalized confusion matrix
             plot_confusion_matrix(y, pred, classes=class_names, normalize=self._normalize,title=f'Normalized confusion matrix for {rule}')
