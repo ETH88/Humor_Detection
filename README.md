@@ -7,7 +7,7 @@ Welcome to my Humor Detection GitHub! All the code you need to run a humor detec
 
 # Pipeline Architecture
 
-[Link to pipeline architecture on LucidChart](https://app.lucidchart.com/documents/edit/ec3bf0b1-fa2a-4b0e-87f1-3a95f9354464/0_0?shared=true)
+[Link to pipeline architecture](https://docs.google.com/presentation/d/1ovGGWBDW6Nw_IOQBciTxk3PVscZcIRLUf1f7ZEpDcZk/edit?usp=sharing)
 
 [Link to 20 minute presentation of my Humor Detection project](https://www.youtube.com/watch?v=eiJ8as6wXRE)
 
