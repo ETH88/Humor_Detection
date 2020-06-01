@@ -11,7 +11,7 @@ Welcome to my Humor Detection GitHub! All the code you need to run a humor detec
 
 [Link to 20 minute presentation of my Humor Detection project](https://www.youtube.com/watch?v=eiJ8as6wXRE)
 
-[Link to my presentation](https://docs.google.com/presentation/d/1HfwDTGgdVPj8wd_e3G8CPgZqNBk8H3Hlw95FfidmcT0/edit?usp=sharing)
+[Link to my powerpoint presentation](https://docs.google.com/presentation/d/1HfwDTGgdVPj8wd_e3G8CPgZqNBk8H3Hlw95FfidmcT0/edit?usp=sharing)
 
 
 # Running the Code
