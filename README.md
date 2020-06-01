@@ -33,17 +33,35 @@ which python3
 ```
 If something like "/usr/bin/python3" is returned, python3 has been installed and you can skip this step. If not, download the latest version of python3 at python's official website: https://www.python.org/downloads/.
 
-5. Create a virtual environment, which will be a separate place where all the dependencies can be installed:
+5. Create a virtual environment, which will be a separate place where all the dependencies can be installed. On macOS and Linux, type the following command:
 ```
 python3 -m venv venv
 ```
+On Windows, type the following command instead:
+```
+py -m venv venv
+```
 
-6. Enter the virtual environment you just created. After typing the following command, you should see "(venv)" pop up on the left side of the terminal.
+6. Enter the virtual environment you just created. On macOS and Linux, type the following command.
 ```
 source venv/bin/activate
 ```
+On Windows, type the following command instead: 
+```
+.\venv\Scripts\activate
+```
+You should see "(venv)" pop up on the left side of the terminal. To confirm the virtual environment works, on macOS and Linus type the following command:
+```
+which python
+.../venv/bin/python should be returned
+```
+On Windows:
+```
+where python
+.../venv/bin/python.exe should be returned
+```
 
-7. Install the dependencies for this project by typing the following command into the terminal. This should take around five minutes.
+7. Install the dependencies for this project by typing the following command into the terminal. This should take around five minutes. If the pop-up window "The 'gcc' command requires the command line developer tools" appears when you run the following command, click "Install."
 ```
 pip3 install nltk pandas matplotlib sklearn
 ```
