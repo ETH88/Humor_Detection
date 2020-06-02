@@ -72,7 +72,9 @@ sudo pip3 install .
 cd ..
 ```
 
-9. Now the code is ready to be run! Type the following command into your terminal, and watch the Fasttext model go to work!
+9. Download a pre-trained randomforest and fasttext model. These were too big to put in this GitHub, but they can be found here: https://drive.google.com/file/d/1ejE6XG0fnM5gFODRRah8wUPsdhgMAmID/view?usp=sharing. Download the zip file and use the pre-trained models by replacing the "randomforest" folder inside the zip file with the "randomforest" folder inside the "Humor_Detection-master" directory. Also replace the "fasttext" folder inside the zip file with the "fasttext" folder inside the "Humor_Detection-master" directory.
+
+10. Now the code is ready to be run! Type the following command into your terminal, and now you can type in any sentence you want, and my program will output if it thinks it is funny or not (1 - funny, 0 - not funny)!
 ```
 python3 main.py
 ```
@@ -81,12 +83,14 @@ python3 main.py
 
 If you want to play around with the hyperparameters, enable/disable preprocessing stages/rules/postprocessing stages, or even create your own or test out different datasets and combination of rules, I highly recommend downloading the text editor VSCode - you can install it here: https://code.visualstudio.com/download.
 
-The main code I recommend playing around with is "main.py," which contains the "config" dictionary, where all the properties and metadata are specified. Take note of all the comments. 
+The main code I recommend playing around with is "main.py," which contains the "config" dictionary, where all the properties and metadata are specified. Take note of all the comments, especially ones labeled "IMPORTANT". 
 
-After training a fasttext model by running "python3 main.py", I recommend playing around with interactive mode. To do this, set "interactive mode" to "True", and under "postprocess" and "report." If you are in interactive mode, I recommend setting "metrics" to "[]" and "return_pred" to "True." You can also enable whatever rules you want to test (I recommend Contain_Funny). Interactive mode will allow you to input any sentence you want and see whether the model thinks it is funny or not!
+After playing around with interactive mode, I highly recommend switching modes. This can easily be done in "main.py" by setting "interactive mode" to "False". If you are not in interactive mode, there are some things you must change for the model to work well. I recommend setting "metrics" to "['accuracy', 'precision', 'recall', 'f1', 'cm']" and "return_pred" to "False." In addition, turn all "show_effect" for the preprocessing stages to "False", and set 'show_humorword_or_humorphrase' under 'r1' to "False" as well. 
 
-You can also play around with the weights (how much each rule is taken into consideration) by changing what "weight" is equal to for each enabled rule. If you want multiple rules to work together outside of interactive mode, make sure to set "average" to "True" (under 'postprocess' and 'report') and use 'testingdata_copy.txt' for your datafile instead of 'traintest.txt'. If you want to save the results or the confusion matrices, set "save" to True in "postprocessing". In addition, feel free to disable/enable any pre-processing stage/rule/post-processing stage you want to see what effect they have on the model's performance.
+After changing these variables, run "python3 main.py" again and watch my model go to work and return the results of my rules being tested on 80,000 labeled sentences in "testingdata_copy.py".
 
-A pre-trained fasttext and Random Forest model can be found here: https://drive.google.com/file/d/1ejE6XG0fnM5gFODRRah8wUPsdhgMAmID/view?usp=sharing. Feel free to download and use them! You can replace the "randomforest" folder inside the zip file with the "randomforest" folder inside the "Humor_Detection-master" directory, and the "fasttext" folder inside the zip file with the "fasttext" folder inside the "Humor_Detection-master" directory as well.
+You can also play around with the weights (how much each rule is taken into consideration) by changing what "weight" is equal to for each enabled rule. If you want to save the results or the confusion matrices, set "save" to True in "postprocessing". In addition, feel free to disable/enable any pre-processing stage/rule/post-processing stage you want to see what effect they have on the model's performance.
+
+The last thing I recommend doing is training your own Fasttext model (Random Forest takes too long). To train your own Fasttext model, enable the "train_fasttext" preprocessing stage by setting "enabled" to True for that stage. Do not change "test_size," but feel free to adjust and tune the other hyperparameters, including learning rate (between 0 and 1), number of epochs (number of generations it trains), and wordNgrams (right now set to 2, so model takes into account phrases of length 2 - increasing wordNgrams increases context window but may lead to overfitting and a drop in performance). One last thing - you MUST change "datafile" to "traintest.txt." Then run the program with "python3 main.py" and watch the magic of Fasttext training.
 
 Feel free to ask me if you are unable to run my code or if you come across any issues. My email is ethanbmode@gmail.com. Have fun!
