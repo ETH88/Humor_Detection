@@ -61,6 +61,7 @@ where python3
 
 7. Install the dependencies for this project by typing the following command into the terminal. This should take around five minutes. If the pop-up window "The 'gcc' command requires the command line developer tools" appears when you run the following command, click "Install."
 ```
+pip install --upgrade pip
 pip3 install nltk pandas matplotlib sklearn
 ```
 
