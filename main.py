@@ -21,13 +21,16 @@ from pipeline.post_process.visualize import Visualize
 
 if __name__ == '__main__': 
     config = {
-        'datafile': 'traintest.txt', #'traintest.txt', IMPORTANT: if you want to use random forest or fasttext with naive rules, MUST USE 'testingdata_copy.txt'
-        'interactive_mode': False, 
-        'preprocess': [
+        'datafile': 'testingdata_copy.txt', #IMPORTANT: if you want to use trained random forest or fasttext with naive rules, MUST USE 'testingdata_copy.txt'. If you want to train a new random forest or fasttext model, MUST USE 'traintest.txt'
+        'interactive_mode': True, 
+        'preprocess': [ #IMPORTANT: essential preprocess (noise removal, lowercasing) always performed
             {
                 'name': 'remove_stopwords',
-                'enabled': False, 
-                'obj': Remove_Stopwords()
+                'enabled': True, 
+                'obj': Remove_Stopwords(),
+                'metadata': {
+                    'show_effect': True #IMPORTANT: set to True ONLY in interactive mode
+                }
             },
             {
                 'name': 'normalize',
@@ -37,12 +40,18 @@ if __name__ == '__main__':
             {
                 'name': 'stem',
                 'enabled': False,
-                'obj': Stem()
+                'obj': Stem(),
+                'metadata': {
+                    'show_effect': False #IMPORTANT: set to True ONLY in interactive mode
+                }
             },
             {   
                 'name': 'lemmatize',
-                'enabled': False,
-                'obj': Lemmatize()
+                'enabled': True,
+                'obj': Lemmatize(),
+                'metadata': {
+                    'show_effect': True #IMPORTANT: set to True ONLY in interactive mode
+                }
             },
             {
                 'name': 'train_randomforest',
@@ -51,7 +60,7 @@ if __name__ == '__main__':
             },
             { 
                 'name': 'train_fasttext',
-                'enabled': True,
+                'enabled': False, #Recommend setting 'enabled' to True and training your own fasttext model. Do NOT recommend changing test_size, but feel free to play around with the other hyperparameters. If you enable train_fasttext or train_randomforest, set 'datafile' to 'traintest.txt' 
                 'obj': Train_Fasttext(),
                 'metadata': {
                     'test_size': 0.2,
@@ -64,38 +73,39 @@ if __name__ == '__main__':
         ],
         'rules': {
             'r1': {
-                'enabled': False,
+                'enabled': True,
                 'dependencies': [],
                 'obj': Contain_Funny(),
-                'weight': 0.333,
+                'weight': 0.333, #feel free to change weights!
                 'metadata': {
                     'humorwords': True, 
                     'humorphrases': {
                         'enabled': True,
-                        'strict': False #only specific phrases length 4&5
-                    }
+                        'strict': False #only uses specific humor phrases of length 4&5
+                    },
+                    'show_humorword_or_humorphrase': True #IMPORTANT: set to False if not in interactive mode
                 }
             },
             'r2': {
-                'enabled': False, 
+                'enabled': False, #Do NOT recommend enabling - poor performance
                 'dependencies': [],
                 'obj': Contain_NotFunny(),
                 'weight': 0
             },
             'r3': {
-                'enabled': False,
+                'enabled': False, #Do NOT recommend enabling - poor performance
                 'dependencies': ['r1'],
                 'obj': Contain_Funny_Negator(),
                 'weight': 0
             },
             'r4': {
-                'enabled': False,
+                'enabled': False, #Do NOT recommend enabling - poor performance
                 'dependencies': ['r2'],
                 'obj': Contain_NotFunny_Negator(),
                 'weight': 0
             },
             'r5': {
-                'enabled': False,
+                'enabled': True,
                 'dependencies': [],
                 'obj': RandomForest(),
                 'weight': 0.333,
@@ -109,7 +119,7 @@ if __name__ == '__main__':
                 'obj': Fasttext(),
                 'weight': 0.333,
                 'metadata': {
-                    #'modelID': '1' #IMPORTANT: This tells the model which fasttext model you want to test on (default is one just trained as a preprocessing stage). If you want to use a fasttext model you already trained, you can set modelID to the modelID of the model you want to use and thus don't have to retrain a fasttext model.
+                    'modelID': '1' #IMPORTANT: This tells the model which fasttext model you want to test on (default is one just trained as a preprocessing stage). If you want to use a pretrained fasttext model, you can set modelID to the modelID of the model you want to use and thus don't have to retrain a fasttext model
                 }
             }
         },
@@ -118,18 +128,18 @@ if __name__ == '__main__':
                 'enabled': True,
                 'obj': Report(),
                 'metadata': {
-                    'metrics': ['accuracy','precision', 'recall', 'f1', 'cm'], #IMPORTANT: in interactive mode, recommend setting to []
-                    'return_pred': False, #IMPORTANT: in interactive mode, set to True
-                    'average': False,
-                    'save': False, 
+                    'metrics': [], #IMPORTANT: if not in interactive mode, SET TO ['accuracy','precision', 'recall', 'f1', 'cm']
+                    'return_pred': True, #IMPORTANT: if not in interactive mode, SET TO False
+                    'average': True, #uses weights to use all enabled rules together
+                    'save': False, #saves report to csv
                 }
             }, 
             'visualize': {
                 'enabled': False,
                 'obj': Visualize(),
                 'metadata': {
-                    'normalize': False,
-                    'save': False 
+                    'normalize': False, #if you want a normalized confusion matrix, set to True
+                    'save': False #if you enable 'visualize', recommend setting 'save' to True
                 }
             }
 

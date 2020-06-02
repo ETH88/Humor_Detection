@@ -51,6 +51,6 @@ class Fasttext(Rule):
         for index, sentence in enumerate(X_test):
             x = model.predict(sentence)
             y_pred.append(int(str(x[0])[-4])) #gets prediction
-            #prob = float(x[1]) #TODO: use prob!!!!
+            #prob = float(x[1]) 
                 
         return [y_pred, y_test]

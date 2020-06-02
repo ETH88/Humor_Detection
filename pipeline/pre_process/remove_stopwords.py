@@ -12,7 +12,7 @@ class Remove_Stopwords(PreProcess):
         return self.__class__.__name__ #returns name of class
 
     def apply(self, data: list):
-        nltk.download('stopwords')
+        #nltk.download('stopwords')
         from nltk.corpus import stopwords
         
         for i in range(len(data)):
@@ -20,6 +20,9 @@ class Remove_Stopwords(PreProcess):
             review = ' '.join(review) #makes it a str
             data[i][1] = review
 
-        #print ('stopwords removed: ', data)
+        if 'show_effect' in self._metadata.keys():
+            if self._metadata['show_effect'] == True:
+                print ('data with stopwords removed: ', data)
+
         return {'data': data}
     

@@ -25,9 +25,9 @@ class Lemmatize(PreProcess):
         return tag_dict.get(tag, wordnet.NOUN)
 
     def apply(self, data: list):
-        nltk.download('averaged_perceptron_tagger')
-        nltk.download('punkt')
-        nltk.download('wordnet')
+        #nltk.download('averaged_perceptron_tagger')
+        #nltk.download('punkt')
+        #nltk.download('wordnet')
         from nltk.stem import WordNetLemmatizer 
 
         # 1. Init Lemmatizer
@@ -49,7 +49,7 @@ class Lemmatize(PreProcess):
             for word in humorwords:
                 humor_file.write('%s, ' % word)
 
-        ##make sure nothumorwords are stemmed##
+        ##make sure nothumorwords are lemmatized##
         nothumorwords = []
         with open(f'{os.getcwd()}/data/nothumorwords.txt', 'r') as nothumor_file: #reading nothumor words
             nothumorwords = nothumor_file.read().split(", ") 
@@ -61,5 +61,8 @@ class Lemmatize(PreProcess):
             for word in nothumorwords:
                 nothumor_file.write('%s, ' % word)
         
-        #print('lemmatized data: ', data)
+        if 'show_effect' in self._metadata.keys():
+            if self._metadata['show_effect'] == True:
+                print ('lemmatized data: ', data)
+                
         return {'data': data}

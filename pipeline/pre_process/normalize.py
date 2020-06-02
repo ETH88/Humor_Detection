@@ -10,5 +10,5 @@ class Normalize(PreProcess):
     def __repr__(self):
         return self.__class__.__name__ #returns name of class
 
-    def apply(self, data: list): #TODO: IMPLEMENT
+    def apply(self, data: list): #TODO: IMPLEMENT (not yet implemented)
         return {'data': data}

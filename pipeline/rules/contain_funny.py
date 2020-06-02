@@ -67,7 +67,9 @@ class Contain_Funny(Rule):
             if self._metadata['humorwords']:
                 for word in words:
                     if word in humorwords and not words == "" and not funny: #if there's a funny word for first time
-                        #print('funny word:', word)
+                        if 'show_humorword_or_humorphrase' in self._metadata.keys():
+                            if self._metadata['show_humorword_or_humorphrase'] == True:
+                                print('funny word:', word)
                         pred.append(1)
                         funny = True
             
@@ -75,7 +77,10 @@ class Contain_Funny(Rule):
                 if not funny: #no funny word
                     for phrase in humorphrases:
                         if phrase in rawdata[i] and not funny:
-                            #print('funny phrase: ', phrase)
+                            if 'show_humorword_or_humorphrase' in self._metadata.keys():
+                                if self._metadata['show_humorword_or_humorphrase'] == True:
+                                    print('funny phrase: ', phrase)
+                            
                             pred.append(1)
                             funny = True
             

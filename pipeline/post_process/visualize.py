@@ -30,11 +30,12 @@ class Visualize(PostProcess):
         str_rules = [f'{item}' for item in rules]
 
         for rule in d:
-            if rule == 'RandomForest' or rule == 'Fasttext': #TODO: make sure code works
+            if rule == 'RandomForest' or rule == 'Fasttext':
                 pred = [int(item) for item in d[rule][0]]
                 y = [int(item) for item in d[rule][1]]
             else:
                 pred = d[rule] 
+
             self.cm(y, pred, rules, str_rules, rule, datafile)
 
         return {'visualize': 'success'}
@@ -54,7 +55,7 @@ class Visualize(PostProcess):
         import time
         ts = time.gmtime()
 
-        if self._normalize:
+        if self._normalize: #if normalize is True
             # Plot normalized confusion matrix
             plot_confusion_matrix(y, pred, classes=class_names, normalize=self._normalize,title=f'Normalized confusion matrix for {rule}')
             if self._save:

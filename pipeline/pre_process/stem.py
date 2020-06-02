@@ -33,8 +33,6 @@ class Stem(PreProcess):
         for index, word in enumerate(humorwords):
             humorwords[index] = ps.stem(word)
         
-        print(humorwords)
-
         with open(f'{os.getcwd()}/data/humorwords_stemmed.txt', 'w') as humor_file: #reading humor words
             for word in humorwords:
                 humor_file.write('%s, ' % word)
@@ -47,12 +45,12 @@ class Stem(PreProcess):
         for index, word in enumerate(nothumorwords):
             nothumorwords[index] = ps.stem(word)
         
-        #print(nothumorwords)
-
         with open(f'{os.getcwd()}/data/nothumorwords_stemmed.txt', 'w') as nothumor_file: #reading humor words
             for word in nothumorwords:
                 nothumor_file.write('%s, ' % word)
 
-        
-        #print ('stemmed: ', data)
+        if 'show_effect' in self._metadata.keys():
+            if self._metadata['show_effect'] == True:
+                print ('stemmed data: ', data)
+                
         return {'data': data}

@@ -1,3 +1,5 @@
+#For fasttext, data needs __label__ in front of each label. This program does that
+
 data = []
 with open("traintest_copy.txt", 'r') as data_file:
     for line in data_file:

@@ -122,6 +122,6 @@ class Report(PostProcess):
                 for index, item in enumerate(pred):
                     average[index] += item * rules[str_rules.index(rule)]._weight
 
-        average = [round(average[index]+0.0001) for index, item in enumerate(average)] #round() rounds 0.5 to 0
+        average = [round(average[index]+0.0001) for index, item in enumerate(average)] #round() rounds 0.5 to 0, so this makes sure rounding up occurs
 
         return average

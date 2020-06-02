@@ -38,9 +38,7 @@ class RandomForest(Rule):
                     X_test.append(currentPlace[3])
         else: #interactive mode
             y_test.append(s._data[0][0])
-            X_test.append(s._data[0][1])
-        #TODO: read y_text in report.py, not here
-        
+            X_test.append(s._data[0][1])        
 
         tfidf = ""
         import pickle

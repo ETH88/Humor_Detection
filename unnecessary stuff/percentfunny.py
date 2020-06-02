@@ -1,3 +1,4 @@
+#Finds funniest phrases/words & not funniest words
 if __name__ == '__main__':
     data = []
     humordata = []
@@ -41,11 +42,11 @@ if __name__ == '__main__':
     from nltk.util import ngrams
     for line in humordata: #humordata
         tokens = nltk.word_tokenize(line)
-        tokens = list(ngrams(tokens, 2)) #phrases length 2
+        tokens = list(ngrams(tokens, 2)) #phrases length 2 - can checnge
         #print(tokens)
         
         for token in tokens:
-            temp = f'{token[0]} {token[1]}' 
+            temp = f'{token[0]} {token[1]}' #if change phrase length, must change temp
             if temp in funnyphraseDict: 
                 funnyphraseDict[temp] += 1
             else: 
