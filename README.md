@@ -85,9 +85,9 @@ If you want to play around with the hyperparameters, enable/disable preprocessin
 
 The main code I recommend playing around with is "main.py," which contains the "config" dictionary, where all the properties and metadata are specified. Take note of all the comments, especially ones labeled "IMPORTANT". 
 
-After playing around with interactive mode, I highly recommend switching modes. This can easily be done in "main.py" by setting "interactive mode" to "False". If you are not in interactive mode, there are some things you must change for the model to work well. I recommend setting "metrics" to "['accuracy', 'precision', 'recall', 'f1', 'cm']" and "return_pred" to "False." In addition, turn all "show_effect" for the preprocessing stages to "False", and set 'show_humorword_or_humorphrase' under 'r1' to "False" as well. 
+After playing around with interactive mode, I highly recommend switching modes. This can easily be done in "main.py" by setting "interactive mode" to False. If you are not in interactive mode, there are some things you must change for the model to work well. Under 'postprocess' and 'report', I recommend setting "metrics" to ['accuracy', 'precision', 'recall', 'f1', 'cm'] and "return_pred" to False. In addition, turn all "show_effect" for the preprocessing stages to False, and set 'show_humorword_or_humorphrase' under 'r1' to False as well. 
 
-After changing these variables, run "python3 main.py" again and watch my model go to work and return the results of my rules being tested on 80,000 labeled sentences in "testingdata_copy.py".
+After changing these variables, run "python3 main.py" again and watch my model go to work and return the results of my rules being tested on 80,000 labeled sentences in "testingdata_copy.txt".
 
 You can also play around with the weights (how much each rule is taken into consideration) by changing what "weight" is equal to for each enabled rule. If you want to save the results or the confusion matrices, set "save" to True in "postprocessing". In addition, feel free to disable/enable any pre-processing stage/rule/post-processing stage you want to see what effect they have on the model's performance.
 
