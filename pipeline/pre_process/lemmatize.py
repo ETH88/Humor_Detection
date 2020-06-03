@@ -63,6 +63,6 @@ class Lemmatize(PreProcess):
         
         if 'show_effect' in self._metadata.keys():
             if self._metadata['show_effect'] == True:
-                print ('lemmatized data: ', data)
+                print ('lemmatized data: ', data[0][1])
                 
         return {'data': data}

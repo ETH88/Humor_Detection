@@ -22,7 +22,7 @@ class Remove_Stopwords(PreProcess):
 
         if 'show_effect' in self._metadata.keys():
             if self._metadata['show_effect'] == True:
-                print ('data with stopwords removed: ', data)
+                print ('data with stopwords removed: ', data[0][1])
 
         return {'data': data}
     

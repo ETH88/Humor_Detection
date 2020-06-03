@@ -51,6 +51,6 @@ class Stem(PreProcess):
 
         if 'show_effect' in self._metadata.keys():
             if self._metadata['show_effect'] == True:
-                print ('stemmed data: ', data)
+                print ('stemmed data: ', data[0][1])
                 
         return {'data': data}
