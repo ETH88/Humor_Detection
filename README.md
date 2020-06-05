@@ -13,7 +13,7 @@ Welcome to my Humor Detection GitHub! All the code you need to run a humor detec
 
 [Link to my powerpoint presentation](https://docs.google.com/presentation/d/1HfwDTGgdVPj8wd_e3G8CPgZqNBk8H3Hlw95FfidmcT0/edit?usp=sharing)
 
-[Link to my senior project blog] (https://mclean.basisindependent.com/author/ethanh/?_ga=2.150583678.995056995.1591321133-237266007.1582138476)
+[Link to my senior project blog](https://mclean.basisindependent.com/author/ethanh/?_ga=2.150583678.995056995.1591321133-237266007.1582138476)
 
 
 # Running the Code
